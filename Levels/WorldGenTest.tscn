@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://8soenovdpdxk"]
+
+[ext_resource type="Script" path="res://Levels/WorldGenTest.gd" id="1_lbvlk"]
+[ext_resource type="Texture2D" uid="uid://cjr1x5bjgnspw" path="res://Tilemaps/test_tilemap.png" id="2_l7n4m"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v3yue"]
+texture = ExtResource("2_l7n4m")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_e440g"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_v3yue")
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_lbvlk")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_e440g")
+format = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 318)
+zoom = Vector2(0.1, 0.1)
